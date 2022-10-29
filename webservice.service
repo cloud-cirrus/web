@@ -1,0 +1,13 @@
+[Unit]
+Description=app.js - making your environment variables ready
+After=network.target
+
+[Service]
+EnvironmentFile=/home/ubuntu/webapp/.env
+Type=simple
+User=ubuntu
+ExecStart=/usr/bin/node /home/ubuntu/webapp/app.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
